@@ -1,31 +1,41 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+
+
+h1 {
+  color:#F4CE14;
+  font-family: "Markazi Text", serif;
+  font-weight: bold;
+  font-size: 8vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h2 {
   color: white;
+  font-family: "Markazi Text", serif;
+  font-weight: bold;
+  font-size: 5vh;
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+}
+
+.nav-link:hover {
+  color: #F4CE14;
+}
+
+.cropped-image {
+  width: 20%;
+  height: 100px;
+  object-fit: cover;
+  object-position: left 100%;
+  margin-left: 10%;
 }
 
 @keyframes App-logo-spin {
