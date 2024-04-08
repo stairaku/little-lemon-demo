@@ -1,6 +1,5 @@
 import {useState} from "react";
 import FullScreenSection from "./FullScreenSection";
-import * as Yup from 'yup';
 import {
     FormControl,
     FormErrorMessage,
@@ -20,8 +19,14 @@ const BookingForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submitForm()
+        props.submitForm(e);
         console.log("Form Submitted!");
+    }
+
+    const handleDateChange = (e) => {
+        console.log(e);
+        setDate(e);
+        props.dispatch(e);
     }
 
     return (
@@ -36,17 +41,17 @@ const BookingForm = (props) => {
                 <VStack display='grid'>
                     <HStack>
                         <FormLabel htmlFor="res-date" aria-labelledby="res-date">Choose Date</FormLabel>
-                        <Input type="date" id="res-date" value={date} onChange={e => setDate(e.target.value)}/>
+                        <Input type="date" id="res-date" value={date} onChange={e => handleDateChange(e.target.value)} required/>
                         <FormLabel htmlFor="res-time" aria-labelledby="res-time">Choose Time</FormLabel>
-                        <Select id="res-time" value={time} onChange={e => setTime(e.target.value)}>
-                            {props.availableTimes.times.map(availableSlot => (<option key={availableSlot} value={availableSlot}>{availableSlot}</option>))}
+                        <Select id="res-time" value={time} onChange={e => setTime(e.target.value)} required>
+                            {props.availableTimes.times.map(availableSlot => {return <option key={availableSlot} value={availableSlot}>{availableSlot}</option>})}
                         </Select>
                     </HStack>
                     <HStack>
                         <FormLabel htmlFor="guests" aria-labelledby="guests">Nbr of Guests</FormLabel>
                         <Input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={e => setGuests(e.target.value)}/>
                         <FormLabel htmlFor="occasion" aria-labelledby="ocassion">Occasion</FormLabel>
-                        <Select id="occasion" value={ocassion} onChange={e => setOcassion(e.target.value)}>
+                        <Select id="occasion" value={ocassion} onChange={e => setOcassion(e.target.value)} required>
                             <option>Birthday</option>
                             <option>Anniversary</option>
                         </Select>

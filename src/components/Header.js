@@ -21,10 +21,10 @@ const Header = () => {
                     >
                         <nav>
                             <HStack spacing={38} fontSize={18} alignItems='center'>
-                                <Link to="/" class='nav-link'>Home</Link>
-                                <Link to="/menu" class='nav-link'>Menu</Link>
-                                <Link to="/specials" class='nav-link'>Specials!</Link>
-                                <Link to="/about-us" class='nav-link'>About Us</Link>
+                                <Link to="/" className='nav-link'>Home</Link>
+                                <Link to="/menu" className='nav-link'>Menu</Link>
+                                <Link to="/specials" className='nav-link'>Specials!</Link>
+                                <Link to="/about-us" className='nav-link'>About Us</Link>
                             </HStack>
                         </nav>
                     </HStack>

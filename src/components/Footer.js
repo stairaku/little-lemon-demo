@@ -46,7 +46,6 @@ const Footer = () => {
                                         <Td pb={0}>2230 1st Ave, Seattle, WA 98121</Td>
                                     </Tr>
                                     <Tr>
-                                        
                                     </Tr>
                                 </Tbody>
                             </Table>

@@ -26,6 +26,10 @@ body {
   font-family: "Karla", sans-serif;
 }
 
+option {
+  color: #333333;
+}
+
 .nav-link:hover {
   color: #F4CE14;
 }

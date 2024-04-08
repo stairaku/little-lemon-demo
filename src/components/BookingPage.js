@@ -33,13 +33,13 @@ const BookingPage = () => {
         return true;
     };
 
-    const initializeTimes = 
-         {times: fetchAPI(new Date())};
-    
-    
-    const updateTimes = (date) => {
+    const initializeTimes = {times: fetchAPI(new Date())};
+
+    const updateTimes = (state, date) => {
         return {times: fetchAPI(new Date(date))};
     }
+
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
 
     const navigate = useNavigate();
     const submitForm = (formData) => {
@@ -47,17 +47,13 @@ const BookingPage = () => {
             navigate("/confirmed")
         }
     }
-    
-
-    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-    console.log(availableTimes)
 
     return(
         <>
             <Header/>
             <BookingForm availableTimes = {availableTimes} dispatch={dispatch} submitForm={submitForm}/>
         </>
-       
+
     )
 }
 
