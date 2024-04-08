@@ -1,17 +1,8 @@
 import { Box, HStack, Image, Button } from "@chakra-ui/react";
 import lemonLogo from "../images/little_lemon_sm.jpg"
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    const handleClick = (anchor) => () => {
-        const id = `${anchor}-section`;
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
-      };
     return (
         <Box
             position="fixed"
@@ -30,16 +21,20 @@ const Header = () => {
                     >
                         <nav>
                             <HStack spacing={38} fontSize={18} alignItems='center'>
-                                <a href="/#home" class='nav-link' onClick={handleClick("home")}>Home</a>
-                                <a href="/#menu" class='nav-link' onClick={handleClick("menu")}>Menu</a>
-                                <a href="/#about-us" class='nav-link' onClick={handleClick("special")}>Specials!</a>
-                                <a href="/#about-us" class='nav-link' onClick={handleClick("about-us")}>About Us</a>
+                                <Link to="/" class='nav-link'>Home</Link>
+                                <Link to="/menu" class='nav-link'>Menu</Link>
+                                <Link to="/specials" class='nav-link'>Specials!</Link>
+                                <Link to="/about-us" class='nav-link'>About Us</Link>
                             </HStack>
                         </nav>
                     </HStack>
                 </Box>
-                <Button colorScheme='teal' variant='outline' ml={200}>Reserve</Button>
-                <Button colorScheme='teal' variant='solid'mr={20} >Order Online</Button>
+                <Link to='/reserve'>
+                    <Button colorScheme='teal' variant='outline' ml={200}>Reserve</Button>
+                </Link>
+                <Link to='/order-online'>
+                    <Button colorScheme='teal' variant='solid'mr={20} >Order Online</Button>
+                </Link>
             </HStack>
         </Box>
     )

@@ -1,5 +1,6 @@
 import React from "react";
-import { Image, Box, Button, HStack, VStack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import { Image, Button, HStack, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import chef from "../images/chef-lg.jpg"
 
@@ -17,7 +18,9 @@ const LandingSection = () => (
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <h3>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</h3>
-            <Button width='150px' margin={10} colorScheme='yellow'>Reserve Table</Button>
+            <Link to='/reserve'>
+              <Button width='150px' margin={10} colorScheme='yellow'>Reserve Table</Button>
+            </Link>
         </VStack>
         <Image src={chef} width={300} mr='20%'/>
     </HStack>
